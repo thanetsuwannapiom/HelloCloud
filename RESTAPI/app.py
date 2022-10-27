@@ -10,6 +10,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 #Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir,'db.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.app_context().push()
 # Init db
 db = SQLAlchemy(app)
 #Init ma
@@ -31,12 +32,13 @@ class Product(db.Model):
 
 class ProductSchema(ma.Schema):
     class Meta:
-        field = ('id','name','description','price','qty')
+        fields = ('id','name','description','price','qty')
 
 product_schema = ProductSchema()                
-product_schema = ProductSchema(many = True)
+products_schema = ProductSchema(many = True)
+db.create_all()
 
-#Create a Product
+# Create a Product
 @app.route('/product', methods=['POST'])
 def add_product():
     name = request.json['name']
@@ -51,6 +53,47 @@ def add_product():
 
     return product_schema.jsonify(new_product)
 
+    #Get All Products
+@app.route('/product', methods = ['GET'])
+def get_products():
+    all_products = Product.query.all()
+    result = products_schema.dump(all_products)
+    return jsonify(result)
+
+#Get Single
+@app.route('/product/<id>', methods = ['GET'])
+def get_product(id):
+    product = Product.query.get(id)
+    return product_schema.jsonify(product)
+
+#Update a Product
+@app.route('/product/<id>',methods = ['PUT'])
+def update_product(id):
+    product = Product.query.get(id)
+
+    name = request.json['name'] 
+    description = request.json['description']  
+    price = request.json['price'] 
+    qty = request.json['qty']
+
+    product.name = name
+    product.description =description
+    product.price = price
+    product.qty = qty
+
+    db.session.commit()
+
+    return product_schema.jsonify(product)
+
+#Del
+@app.route('/product/<id>',methods = ['DELETE'])
+def delte_product(id):
+    product = Product.query.get(id)
+    db.session.delete(product)
+    db.session.commit()
+
+    return product_schema.jsonify(product)
+    
 if __name__ == '__main__':
 
     app.run(debug=True)
