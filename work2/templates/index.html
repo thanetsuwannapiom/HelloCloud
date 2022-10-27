@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Work</title>
+
+</head>
+<body>
+    <h2><center>Homework</center></h2>
+    <table border="1" width="100%" align="center">
+        <thead>
+          <tr class="active-row" , bgcolor="#87CEFA">
+            <th>Student_ID</th>
+            <th>Student_F_Name</th>
+            <th>Student_L_Name</th>
+            <th>E_mail</th>
+            <th>Subject_ID</th>
+            <th>Subject_Name</th>
+            <th>Grade</th>
+            <th>Teacher_F_name</th>
+            <th>Teacher_L_name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in TEST %}
+            <tr bgcolor="#ADD8E6">
+              <td>{{ i.student_id }}</td>
+              <td>{{ i.f_name }}</td>
+              <td>{{ i.l_name }}</td>
+              <td>{{ i.e_mail }}</td>
+              <td>{{ i.subject_id }}</td>
+              <td>{{ i.subject_name }}</td>
+              <td>{{ i.grade }}</td>
+              <td>{{ i.teacher_f_name }}</td>
+              <td>{{ i.teacher_l_name }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+</body>
+</html>
