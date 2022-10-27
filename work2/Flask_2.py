@@ -1,6 +1,6 @@
 from flask import Flask,render_template,request 
 from flask_sqlalchemy import SQLAlchemy 
-from Tables_ORM import STUDENT ,REGISTRATION,SUBJECT,TEACHER, session
+from Tables import STUDENT ,REGISTRATION,SUBJECT,TEACHER, session
 app =  Flask(__name__)
 
 @app.route('/')
