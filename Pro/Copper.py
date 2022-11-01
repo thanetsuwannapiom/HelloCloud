@@ -29,7 +29,7 @@ def CopperPrice():
     price  = driver.find_element(By.XPATH,'//*[@id="pair_959211"]/td[4]').text
     max    = driver.find_element(By.XPATH,'//*[@id="pair_959211"]/td[6]').text
     min    = driver.find_element(By.XPATH,'//*[@id="pair_959211"]/td[7]').text
-    change = driver.find_element(By.XPATH,'//*[@i d="pair_959211"]/td[9]').text
+    change = driver.find_element(By.XPATH,'//*[@id="pair_959211"]/td[9]').text
     times   = driver.find_element(By.XPATH,'//*[@id="pair_959211"]/td[10]').text
     country    = "USA"
     price2  = driver.find_element(By.XPATH,'//*[@id="pair_8831"]/td[4]').text
@@ -47,7 +47,7 @@ def CopperPrice():
 
 
     driver.refresh()
-    return price , max , min , change , times , country , price2 , max2 , min2 , change2 , times2 , country2 , price3 , max3 , min3 , change3 , times3 , country3
+    return price , max , min , change, times , country , price2 , max2 , min2 , change2 , times2 , country2 , price3 , max3 , min3 , change3 , times3 , country3
 while True:
     price = CopperPrice()
     Base.metadata.drop_all(engine)
