@@ -18,7 +18,7 @@ def index():
     Data = cursor.fetchall()
 
 
-    return render_template('test.html',DataCopper=Data)
+    return render_template('index.html',DataCopper=Data)
 '''
 
 @app.route('/home')

@@ -18,7 +18,8 @@
             <th>Country</th>
             
         </tr>
-        {% for row in DataCopper %}
+      <tbody>
+      {% for row in DataCopper %}
         <tr bgcolor="#FFEFD5">
           <td>{{ row[0] }}</td>
           <td>{{ row[1] }}</td>
@@ -29,7 +30,7 @@
         
         </tr>
       {% endfor %}
-      
+    </tbody>
       </table>
 </body>
 </html>
