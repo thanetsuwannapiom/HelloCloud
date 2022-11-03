@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <nav>
-            <img src="/Pro/image/background.png" class="logo">
+            <img src="/Pro/image/logo.png" class="logo">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Login</a></li>
@@ -59,50 +59,110 @@
     <div class="paper">
         <div class="wrapper">
             <div class="card">
-                
+
                 <div class="box">
-                    <h2> PRICE</h2>
-                    <table> 
-                        <thead> 
+                    <table>
+                        <thead>
                             <tr>
-                                <th>Price</th>
-                        
-                
+                                <th> PRICE</th>
                             </tr>
                         </thead>
-                        <tbody>
-                        {% for i in DataCopper %}
-                            <tr>
-                                <td>{{  i[0]  }}</td>
-                            </tr>
-
-                        {% end for %}    
-                        </tbody> 
                     </table>
+                        <tbody>
+                        {% for i in DataCopper %} 
+                            <tr>
+                                <td>{{ i[0] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
                 </div>
 
                 <div class="box">
-                    <h2> MAX</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> MAX </th>
+                            </tr>
+                        </thead>
+                    </table>
+                        <tbody>
+                        {% for i in DataCopper %} 
+                            <tr>
+                                <td>{{ i[1] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
 
                 </div>
 
                 <div class="box">
-                    <h2> MIN</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> MIN </th>
+                            </tr>
+                        </thead>
+                    </table>
+                        <tbody>
+                        {% for i in DataCopper %} 
+                            <tr>
+                                <td>{{ i[2] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
 
                 </div>
 
                 <div class="box">
-                    <h2> CHANGE </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> CHANGE </th>
+                            </tr>
+                        </thead>
+                    </table>
+                        <tbody>
+                        {% for i in DataCopper %} 
+                            <tr>
+                                <td>{{ i[3] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
 
                 </div>
                 
                 <div class="box">
-                    <h2> TIME </h2>
-
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> TIME </th>
+                            </tr>
+                        </thead>
+                    </table>
+                        <tbody>
+                        {% for i in DataCopper %} 
+                            <tr>
+                                <td>{{ i[4] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
                 </div>
 
                 <div class="box">
-                    <h2> COUNTRY </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th> COUNTRY </th>
+                            </tr>
+                        </thead>
+                    </table>
+                        <tbody>
+                        {% for i in DataCopper %} 
+                            <tr>
+                                <td>{{ i[5] }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
                 </div>
 
 
