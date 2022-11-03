@@ -16,9 +16,13 @@ def index():
 
     cursor.execute(select_copper)
     Data = cursor.fetchall()
+    s = []
+    for i in Data: # แปลง list ซ้อน list
+        for z in i:
+            s.append(z)
 
 
-    return render_template('index.html',DataCopper=Data)
+    return render_template('index.html',DataCopper=s)
 '''
 
 @app.route('/home')
