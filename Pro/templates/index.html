@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Copper </title>
-    <link rel="stylesheet" href="/Pro/static/style.css">
+    <link href="{{ url_for('static',filename='style.css')}}" rel="stylesheet"> 
 
 </head>
 <body>
     <div class="container">
         <nav>
-            <img src="/Pro/image/logo.png" class="logo">
+            <img src="staic/image/logo.png" class="logo">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Login</a></li>
@@ -30,7 +30,7 @@
 
         <div class="coin-list">
             <div class="coin">
-                <img src="/Pro/image/bitcoin.png">
+                <img src="static/image/bitcoin.png">
                 <div>
                     <h3>$00</h3>
                     <p>PRICE</p>
@@ -38,7 +38,7 @@
             </div>
 
             <div class="coin">
-                <img src="/Pro/image/ethereum.png">
+                <img src="static/image/ethereum.png">
                 <div>
                     <h3>$00</h3>
                     <p>MAX</p>
@@ -46,7 +46,7 @@
             </div>
 
             <div class="coin">
-                <img src="/Pro/image/dogecoin.png">
+                <img src="static/image/dogecoin.png">
                 <div>
                     <h3>$00</h3>
                     <p>MIN</p>
