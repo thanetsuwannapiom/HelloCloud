@@ -1,18 +1,32 @@
+from flask import Flask,render_template
+from flask_sqlalchemy import SQLAlchemy
 import psycopg2
-connection = psycopg2.connect(user='webadmin',
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    connection = psycopg2.connect(user='webadmin',
                                     password='VCNtps41396',
                                     host='node37019-thanet.proen.app.ruk-com.cloud',
                                     port='11235',
                                     database='project')
-cursor = connection.cursor()
+    cursor = connection.cursor()
 
-select_copper = 'select * from copper'
+    select_copper = 'select * from copper'
 
-cursor.execute(select_copper)
-Data = cursor.fetchall()
-s = []
-for i in Data: # แปลง list ซ้อน list
-    for z in i:
-        s.append(z)
+    cursor.execute(select_copper)
+    Data = cursor.fetchall()
+        
 
-print(s)
+
+    return render_template('index.html',DataCopper=Data)
+'''
+
+@app.route('/home')
+def home():
+
+    return render_template('home.html')
+'''
+if __name__  == '__main__':
+    app.run(host='0.0.0.0',port=80,debug=True)
+
