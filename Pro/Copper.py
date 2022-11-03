@@ -50,7 +50,7 @@ def CopperPrice():
     return price , max , min , change, times , country , price2 , max2 , min2 , change2 , times2 , country2 , price3 , max3 , min3 , change3 , times3 , country3
 while True:
     price = CopperPrice()
-    #Base.metadata.drop_all(engine)
+    Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)
 
     Session = sessionmaker(bind=engine)
@@ -66,7 +66,4 @@ while True:
     print(session.query(COPPER).all())
     session.commit()
 
-    time.sleep(18000)
-
-
-
+    time.sleep(10000)
