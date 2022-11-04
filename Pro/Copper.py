@@ -66,4 +66,4 @@ while True:
     print(session.query(COPPER).all())
     session.commit()
 
-    time.sleep(10000)
+    time.sleep(1000)
